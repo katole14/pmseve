@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>view all</title>
+<link rel="stylesheet" type="css/text" href="../css/div.css">
+ <link rel="stylesheet" type="css/text" href="../css/AddStyle.css"> 
+<script  type="text/javascript" src="../script/angular.min.js"></script>
+<script  type="text/javascript" src="../script/application.js"></script>
+<script  type="text/javascript" src="../script/controller.js"></script>
+</head>
+
+<body ng-app="myApp">
+<h1>List Of All Products </h1>
+<div   ng-controller="listCtrl">
+<table align="center" border="1px solid">
+<tr>
+<th>Product_id</th>
+<th>Product_name</th>
+<th>Description</th>
+<th>Manufacturing_date</th>
+<th>Expiry_date</th>
+<th>Max. Retail Price</th>
+<th>Category_id</th>
+<th>SubCategory_id</th>
+<th>Supplier_id</th>
+<th>Quantity</th>
+<th>Ratings</th></tr>
+<tr ng-repeat="pro in products">
+	<td>{{pro.product_Id}}</td>
+	<td>{{pro.product_Name}}</td>
+	<td>{{pro.description}}</td>
+	<td>{{pro.manufacturing_Date}}</td>
+	<td>{{pro.expiry_Date}}</td>
+	<td>{{pro.maximum_Retail_Price}}</td>
+	<td>{{pro.category.category_Id}}</td>
+	<td>{{pro.subCategory.subCategory_Id}}</td>
+	<td>{{pro.supplier.supplier_Id}}</td>
+	<td>{{pro.quantity}}</td>
+	<td>{{pro.rating}}</td>
+</table>
+<p style="margin-left:40%;"><a class="button" href="../pages/Mainpage.html""> HomePage! Click </a></p>
+
+</div>
+
+</body>
+</html>

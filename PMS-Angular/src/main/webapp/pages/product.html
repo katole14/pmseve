@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product</title>
+ <link rel="stylesheet" type="css/text" href="../css/AddStyle.css">
+
+<script  type="text/javascript" src="../script/angular.min.js"></script>
+<script  type="text/javascript" src="../script/application.js"></script>
+<script  type="text/javascript" src="../script/controller.js"></script>
+</head>
+<body  ng-app="myApp">
+ <h1>Add Product</h1>
+<div id="prodformctn" ng-controller="mycontroller">
+<form action="../CreatProduct" method="get" name="prodform">
+
+<table>
+<tr>
+<td> <lable for="pname">Product Name</lable> </td>
+<td><input type="text" name="pname" size="20"></td>
+</tr>
+<tr>
+<td>Product Description </td>
+<td><input type="text" name="pdes" size="20"></td>
+</tr>
+<tr>
+<td>Max Retail Price</td>
+<td><input type="text" name="maxprice" size="20"></td>
+</tr>
+<tr>
+<td>Product Manufacturing Date</td>
+<td><input type="Date" name="pmafdate" ></td>
+</tr>
+<tr>
+<td>Product Expiry Date</td>
+<td><input type="Date" name="pexdate" ></td>
+</tr>
+<tr>
+<td> choose category</td>
+<td><select name="pcategory_name" ng-init="getCategories();"  >
+<option ng-repeat="category in categories" value="{{category.category_Name}}">{{category.category_Name}}</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td> choose Sub category</td>
+<td><select name="psubcategory" ng-init=getSubCategories();>
+<option ng-repeat="subCategory in subcategories" value="{{subCategory.subCategory_Name}}">{{subCategory.subCategory_Name}}</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td> choose Supplier</td>
+<td><select name="psupplier" ng-init=getSupplier();>
+<option ng-repeat="supplier in suppliers" value="{{supplier.first_Name}}">{{supplier.first_Name}}</option>
+
+</select>
+</td>
+</tr>
+
+<tr>
+<td> choose Discount</td>
+<td><select name ="pdiscount"  ng-init=getDiscount(); multiple>
+<option id="width" ng-repeat="discount in discounts"value="{{discount.discount_Name}}">{{discount.discount_Name}}</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td>Enter Quantity</td>
+<td><input type="text" name="qty" size="20"></td>
+</tr>
+<tr>
+<td>Enter Ratings of product</td>
+<td><input type="text" name="rating" size="20"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit"  name="save" value="save"></td>
+</tr>
+</table>
+
+
+
+
+
+
+</form>
+
+
+
+
+</div>
+<p style="margin-left:40%;"><a class="button" href="../pages/Mainpage.html""> HomePage! Click </a></p>
+</body>
+</html>

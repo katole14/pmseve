@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script  type="text/javascript" src="../script/angular.min.js"></script>
+<script  type="text/javascript" src="../script/application.js"></script>
+<script  type="text/javascript" src="../script/controller.js"></script>
+</head>
+<body>
+<div  ng-controller="dispCtrl">
+<form method="get" action="../DeleteServlet">
+<table>
+
+	<tr><td>Product Id:</td><td><select name="pid">
+							<option ng-repeat="pro in products" value="{{pro.product_Id}}">{{pro.product_Id}}</option>
+
+					</select></td></tr>
+					<tr><td><input type="submit" value="delete"></td></tr>
+	
+	</table>
+	</form>
+</div>
+</body>
+</html>
